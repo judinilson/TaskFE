@@ -1,0 +1,63 @@
+<div class="welcome__content welcome__content-reg _container">
+
+  <div class="welcome__wrap welcome__wrap-row">
+    <h1 class="welcome__title title-up title">
+      Регистрация
+    </h1>
+    <a href="#" class="welcome__logo welcome__logo-reg">
+      <img [src]="consts.pictureLogo" alt="">
+    </a>
+
+  </div>
+  <form class="welcome__form" novalidate #form="ngForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="welcome__input">
+      <input matInput name="userFirst"
+             [(ngModel)]="formData.firstName" required placeholder="Имя пользователя" #userFirst="ngModel"
+             [class.border-danger]="userFirst.invalid && userFirst.touched">
+    </mat-form-field>
+
+    <mat-form-field class="welcome__input">
+      <input matInput name="userLast"
+             [(ngModel)]="formData.lastName" required placeholder="Фамилия пользователя" #userLast="ngModel"
+             [class.border-danger]="userLast.invalid && userLast.touched">
+    </mat-form-field>
+
+    <mat-form-field class="welcome__input">
+      <input matInput type="email" name="userEmail" #userEmail="ngModel"
+             [(ngModel)]="formData.email" required placeholder="Email" email
+             [class.border-danger]="userEmail.invalid && userEmail.touched">
+    </mat-form-field>
+
+    <mat-form-field class="welcome__input">
+      <mat-label>Пароль</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" required name="userPassword" #password="ngModel" [(ngModel)]="formData.password"
+             [class.border-danger]="password.invalid && password.touched">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field class="welcome__input">
+      <mat-label>Ссылка на ваш сайт</mat-label>
+      <input matInput name="userSite"
+             [(ngModel)]="formData.site" required #userSite="ngModel"
+             [class.border-danger]="userSite.invalid && userSite.touched">
+    </mat-form-field>
+
+
+    <div class="welcome__btn welcome__btn-reg welcome__btn-mini" style="text-align: center;">
+      <button class="btn btn-mini" type="submit" [disabled]="form.invalid">
+        Создать аккаунт
+      </button>
+
+      <a href="" class="btn btn-link">
+        Отмена
+      </a>
+    </div>
+  </form>
+
+
+</div>
+

@@ -1,0 +1,40 @@
+<div class="news">
+
+  <div class="news__content _container">
+    <h2 class="news__title title">
+      Новости платформы
+    </h2>
+
+    <div class="news__subtitle">
+      Краткое описание краткое описание
+    </div>
+
+    <div class="news__inner inner-news">
+      <div class="inner-news__item" *ngFor="let item of news">
+        <div class="inner-news__img">
+          <img [src]="item.pictureUrl" alt="">
+        </div>
+
+        <div class="inner-news__title title">
+          {{item.title}}
+        </div>
+
+        <div class="inner-news__text">
+          {{item.description}}
+        </div>
+
+        <div class="inner-news__btn">
+          Подробнее
+        </div>
+      </div>
+
+    </div>
+
+    <div class="inner-news__more">
+      <a href="news.html" class="">
+        Смотреть все новости
+      </a>
+    </div>
+
+  </div>
+</div>

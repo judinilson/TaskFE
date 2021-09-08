@@ -1,0 +1,37 @@
+  <main class="page">
+    <section class="account">
+      <div class="account__content _container">
+        <div class="account__bg">
+          <img [src]="consts.pictureAccountBg" >
+        </div>
+        <div class="account__name name-account">
+            <img class="name-account__img" [src]="user.imageUrl" >
+          <div class="name-account__title title">
+            {{user.firstName}} {{user.lastName}}
+          </div>
+          <div class="name-account__btn">
+            Редактировать профиль
+          </div>
+        </div>
+        <div class="account__inner inner-account">
+          <div class="inner-account__menu">
+            <div class="inner-account__btns">
+              <div class="inner-account__btn " (click)="setCasesType(cases.My)" [class.inner-account__btn-tr]="selectTypeCases===cases.Favorites">
+                Мои работы
+              </div>
+              <div class="inner-account__btn " (click)="setCasesType(cases.Favorites)" [class.inner-account__btn-tr]="selectTypeCases===cases.My">
+                Избранное
+              </div>
+            </div>
+          </div>
+
+          <app-account-cases *ngIf="selectTypeCases===cases.Favorites" [cases]="casesFavorite" ></app-account-cases>
+          <app-account-cases *ngIf="selectTypeCases===cases.My" [cases]="casesMy" ></app-account-cases>
+
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+

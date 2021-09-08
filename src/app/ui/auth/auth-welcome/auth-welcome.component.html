@@ -1,0 +1,26 @@
+<div class="welcome__content _container">
+
+  <div class="welcome__wrap">
+    <a href="#" class="welcome__logo">
+      <img [src]="constant.pictureLogo" alt="">
+    </a>
+    <h1 class="welcome__title title">
+      Добро пожаловать <span>в {{constant.platformName}}</span>
+    </h1>
+    <div class="welcome__subtitle">
+      Платформа для таргетологов
+    </div>
+  </div>
+
+  <div class="welcome__btn">
+    <a routerLink="/auth/login" class="btn btn-tr">
+      Вход
+    </a>
+    <a routerLink="/auth/register" class="btn">
+      Регистрация
+    </a>
+    <a href="" class="btn btn-link">
+      Узнать больше о сервисе
+    </a>
+  </div>
+</div>

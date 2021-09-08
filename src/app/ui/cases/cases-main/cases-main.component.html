@@ -1,0 +1,58 @@
+<div class="cases">
+  <div class="cases__content _container">
+    <div class="cases__search">
+      <input class="cases__search-input">
+
+
+      <div class="cases__search-close">
+        <img src="img/close.svg" alt="">
+      </div>
+      <div class="cases__search-btn">
+
+        Поиск
+      </div>
+    </div>
+    <div class="cases__inner inner-cases">
+      <a href="nisha1.html" class="inner-cases__item">
+        <div class="inner-cases__img">
+          <img src="img/clothes/wear.svg" alt="">
+        </div>
+        <h2 class="inner-cases__title title">
+          <img src="img/clothes/wear-icon.svg">
+          Одежда
+        </h2>
+        <div class=" inner-cases__text">
+          Включает женскую, мужскую, детскую одежду
+        </div>
+      </a>
+      <a href="nisha2.html" class="inner-cases__item">
+        <div class="inner-cases__img">
+          <img src="img/manic/beuti.svg" alt="">
+        </div>
+        <h2 class="inner-cases__title title">
+          <img src="img/manic/nail-icon.svg" alt="">
+          Beauty-сфера
+        </h2>
+        <div class="inner-cases__text">
+          Включает маникюрные салоны, салоны красноты, пирсинга и шугаринга
+        </div>
+      </a>
+
+      <div class="inner-cases__item" *ngFor="let item of cases">
+        <div class="inner-cases__img">
+
+        </div>
+        <h2 class="inner-cases__title title">
+          <img [src]="consts.pictureNicheDefault" alt="">
+          Ниша
+        </h2>
+        <div class="inner-cases__text">
+          Краткое описание краткое описание краткое описание краткое описание
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+

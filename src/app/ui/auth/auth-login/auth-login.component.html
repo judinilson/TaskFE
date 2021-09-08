@@ -1,0 +1,41 @@
+<div class="welcome__content welcome__content-log _container">
+
+  <div class="welcome__wrap welcome__wrap-mm">
+
+    <a href="#" class="welcome__logo welcome__logo-log">
+      <img [src]="consts.pictureLogo" alt="">
+    </a>
+    <h1 class="welcome__title title-up title">
+      Войти
+    </h1>
+
+  </div>
+
+  <form class="welcome__form" novalidate #form="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="welcome__input">
+      <input type="email" name="userEmail" #userEmail="ngModel"
+             [(ngModel)]="formData.email" required placeholder="Email"
+             [class.border-danger]="userEmail.invalid && userEmail.touched" email>
+    </div>
+
+    <div class="welcome__input password">
+      <input   name="userPassword" #userPassword="ngModel"
+              [(ngModel)]="formData.password" required minlength="8" placeholder="Пароль"
+              [class.border-danger]="userPassword.invalid && userPassword.touched">
+
+    </div>
+
+    <div class="welcome__btn welcome__btn-logo welcome__btn-mini">
+      <button type="submit" routerLink="/platform" class="btn btn-mini">
+        Войти в EzTarget
+      </button>
+
+      <a href="" class="btn btn-link">
+        Забыли пароль?
+      </a>
+    </div>
+
+  </form>
+
+</div>

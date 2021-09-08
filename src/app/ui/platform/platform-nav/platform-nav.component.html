@@ -1,0 +1,38 @@
+<header class="header">
+  <div class="header__content _container">
+
+    <a routerLink="/platform" class="header__logo">
+      <img [src]="consts.pictureLogoW" >
+    </a>
+
+    <div class="header__burger"><span></span><span></span><span></span></div>
+    <nav class="header__nav nav-header">
+
+
+      <a routerLink="/news" class="nav-header__item link">
+        Новости
+      </a>
+      <a routerLink="/case" class="nav-header__item link">
+        Список ниш с готовыми настройками
+      </a>
+
+
+    </nav>
+
+    <div class="header__btn">
+      <a href="create-case.html" class="btn btn-plus">
+        Оформить кейс
+      </a>
+      <a routerLink="/account" class="btn btn-ac">
+        Мой аккаунт
+      </a>
+      <a (click)="auth.logout()" class="btn btn-ac">
+        Logout
+      </a>
+    </div>
+
+
+  </div>
+
+
+</header>
