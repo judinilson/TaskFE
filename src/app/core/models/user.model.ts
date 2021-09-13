@@ -26,6 +26,7 @@ export interface IUserRegister extends IUser {
 
 export class UserRegister implements IUserRegister {
   password: string = '';
+  userName: string = '';
   userId: string | null = null;
   firstName: string = '';
   lastName: string = '';

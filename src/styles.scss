@@ -1,4 +1,3 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '~@angular/material' as mat;
@@ -38,6 +37,7 @@ $EZTarget-theme: mat.define-light-theme((
   background-color: green !important;
 }
 
+
 @font-face {
   font-family: "GillSans";
   font-display: swap;
@@ -67,6 +67,38 @@ $EZTarget-theme: mat.define-light-theme((
   font-display: swap;
   src: url("/assets/fonts/KyivTypeSans-Medium3.woff") format("woff"), url("/assets/fonts/KyivTypeSans-Medium3.woff2") format("woff2");
   font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KyivTypeSans";
+  font-display: swap;
+  src: url("/assets/fonts/KyivTypeSans-Medium3.woff") format("woff"), url("/assets/fonts/KyivTypeSans-Medium3.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KyivTypeSans";
+  font-display: swap;
+  src: url("/assets/fonts/KyivTypeSans-Medium3.woff") format("woff"), url("/assets/fonts/KyivTypeSans-Medium3.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  font-display: swap;
+  src: url("/assets/fonts/Lato-Heavy.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  font-display: swap;
+  src: url("/assets/fonts/Lato-Regular.woff") format("woff");
+  font-weight: normal;
   font-style: normal;
 }
 
@@ -168,10 +200,6 @@ html {
 body {
   color: #000;
   font-size: 2.1rem;
-  background: url("/assets/images/bg.svg");
-  background-size: 100% 100%;
-  background-repeat: repeat-y;
-  background-position: top center;
   background-color: var(--main-gray);
   --main-black: #212121;
   --main-blue: #1950db;
@@ -208,8 +236,8 @@ body.lock {
 }
 
 .title {
-  font-weight: 500;
-  font-family: KyivTypeSans;
+  font-weight: 700;
+  font-family: Lato;
 }
 
 .title-up {
@@ -222,9 +250,9 @@ body.lock {
 
 .btn {
   display: inline-block;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 300;
-  padding: 0.9em 0 0.9em;
+  padding: 0.8em 0 0.8em;
   text-align: center;
   color: var(--main-white);
   background: var(--main-blue);
@@ -271,11 +299,12 @@ body.lock {
   transform: translate(0, -50%);
   background: url("/assets/images/plus.svg");
   background-size: cover;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .btn-ac {
+  width: 15.8rem;
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--main-white);
@@ -353,6 +382,10 @@ input:active {
   opacity: 0.8;
 }
 
+.password__show{
+  filter: contrast(175%) brightness(3%);
+}
+
 .page {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
@@ -404,7 +437,8 @@ input:active {
 
 .header__nav a {
   color: var(--main-white);
-  margin: 0rem 0rem 0rem 5rem;
+  font-weight: normal;
+  margin: 0rem 0rem 0rem 7.9rem;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -419,11 +453,11 @@ input:active {
 }
 
 .header__btn a:first-child {
-  margin: 0rem 4rem 0rem 0rem;
+  margin: 0rem 4.3rem 0rem 0rem;
 }
 
 .welcome__content {
-  padding: 13.8rem 0rem 0rem 0rem;
+  padding: 9.2rem 0rem 8.5rem 0rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -447,7 +481,7 @@ input:active {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 0rem 0rem 12.3rem 0rem;
+  margin: 0rem 0rem 9.6rem 0rem;
 }
 
 .welcome__wrap-row {
@@ -457,11 +491,11 @@ input:active {
   flex-direction: row;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
-  align-items: stretch;
+  align-items: center;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0rem 0rem 5.7rem 0rem;
+  margin: 0rem 0rem 5.9rem 0rem;
   width: 67rem;
 }
 
@@ -472,26 +506,32 @@ input:active {
 }
 
 .welcome__wrap-mm {
-  margin: 0rem 0rem 2rem 0rem;
+  margin: 0rem 0rem 6rem 0rem;
 }
 
 .welcome__logo {
-  margin: 0rem 0rem 3.4rem 0rem;
+  margin: 0rem 0rem 104px 0rem;
+
+  img {
+    width: 84px;
+  }
 }
 
 .welcome__title {
   font-size: 4.5rem;
-  margin: 0rem 0rem 3.7rem 0rem;
+  margin: 0rem 0rem 17px 0rem;
 }
 
 .welcome__subtitle {
-  font-weight: 300;
+  font-weight: 400;
+  color: var(--main-blue);
 }
 
 .welcome__btn {
-  max-width: 55rem;
+  max-width: 43.5rem;
   width: 100%;
   margin: 0rem 0rem 4rem 0rem;
+  text-align: center;
 }
 
 .welcome__btn:last-child {
@@ -500,11 +540,23 @@ input:active {
 
 .welcome__btn a {
   display: block;
-  margin: 0rem 0rem 4rem 0rem;
+  margin: 0rem 0rem 2.9rem 0rem;
+}
+
+.welcome__btn a:nth-child(2) {
+  margin-bottom: 12.7rem;
+}
+
+.welcome__btn a:last-child {
+  margin-bottom: 0;
 }
 
 .welcome__btn-mini {
-  max-width: 31.4rem;
+  button {
+    width: 314px;
+    margin-bottom: 2.5rem;
+    font-family: 'GillSans';
+  }
 }
 
 .welcome__more {
@@ -512,7 +564,7 @@ input:active {
 }
 
 .welcome__form {
-  max-width: 67rem;
+  max-width: 669px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -527,7 +579,7 @@ input:active {
 }
 
 .welcome__input {
-  margin: 0rem 0rem 2.4rem 0rem;
+  margin: 0rem 0rem 3.7rem 0rem;
   width: 100%;
 }
 
@@ -566,6 +618,44 @@ input:active {
   height: 2.4rem;
 }
 
+.welcome__select {
+  text-align: center;
+max-width: 26.4rem;
+
+  select {
+    cursor: pointer;
+    width: 26.4rem;
+    color: rgba(25, 80, 219, 1);
+    font-size: 1.6rem;
+    font-weight: 300;
+    font-family: 'GillSans';
+    padding: 1.1rem 2rem 1rem 4.3rem;
+    background: transparent;
+    border: 2px solid rgba(25, 80, 219, 0.46);
+    border-radius: 9.6rem;
+
+     option {
+       border: none;
+       cursor: pointer;
+      margin: 10px;
+      background: var(--main-gray);
+    }
+  }
+  .select{
+    width: 26.4rem;
+    position: relative;
+  }
+}
+
+.select:before {
+  content: url("assets/images/globe.png");
+  width: 2rem;
+  position: absolute;
+  left: 1.4rem;
+  top: 1.2rem;
+}
+
+
 .lan-welcome__wrap {
   display: none;
   margin: 2rem 0rem 0rem 0rem;
@@ -590,7 +680,7 @@ input:active {
 }
 
 .primary__content {
-  padding: 7.8rem 0rem 10rem 0rem;
+  padding: 7.8rem 0rem 0rem 0rem;
 }
 
 .primary__wrap {
@@ -609,10 +699,15 @@ input:active {
   padding: 2.4rem 2.4rem 3.8rem;
   background: var(--main-white);
   border-radius: 2.6rem;
+  margin-right: 3rem;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   cursor: pointer;
+}
+
+.wrap-primary__item:last-child{
+  margin-right: 0;
 }
 
 .wrap-primary__item:hover {
@@ -2070,7 +2165,7 @@ section.nisha .nisha__title {
   }
 
   .welcome__content {
-    padding: 10.9rem 3.4rem 0rem;
+    padding: 4rem 3.4rem 3rem;
   }
 
   .welcome__content-reg {
@@ -2153,6 +2248,14 @@ section.nisha .nisha__title {
   .welcome__btn a {
     margin: 0rem 0rem 1.7rem 0rem;
     font-size: 1.37rem;
+  }
+
+  .welcome__btn a:nth-child(2) {
+    margin-bottom: 5rem;
+  }
+
+  .btn-mini{
+    font-size: 1.3rem;
   }
 
   .welcome__input input {

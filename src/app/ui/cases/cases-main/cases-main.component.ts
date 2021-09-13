@@ -9,7 +9,7 @@ import {ConstantHelper} from "../../../core/helpers/constant-helper";
 export class CasesMainComponent implements OnInit {
   consts = ConstantHelper
 
-  cases = [1,2,3,4,5]
+  cases = [1,2,3,4]
   constructor() { }
 
   ngOnInit(): void {

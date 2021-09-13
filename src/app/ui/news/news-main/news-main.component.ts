@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ConstantHelper} from "../../../core/helpers/constant-helper";
 import {NewsService} from "../../../core/services/news.service";
 import {News} from "../../../core/models/news";
@@ -9,12 +9,15 @@ import {News} from "../../../core/models/news";
   styleUrls: ['./news-main.component.scss']
 })
 export class NewsMainComponent implements OnInit {
-  consts = ConstantHelper
-  news : News[] = []
-  constructor(private _newsService:NewsService) { }
+  consts = ConstantHelper;
+  news: News[] = [];
+  activePag = 0;
+  paginators = [1,2,3,4,5];
+  constructor(private _newsService: NewsService) {
+  }
 
   ngOnInit(): void {
-    this._newsService.getAll().subscribe(res=>{
+    this._newsService.getAll().subscribe(res => {
       this.news = res.model
     })
   }

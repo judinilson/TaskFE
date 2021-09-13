@@ -4,11 +4,7 @@
 
 export const environment = {
   production: false,
-  baseApiUrl:"https://localhost:44300",
-  apiUrl : `https://localhost:44300/api`,
-  tenantId: 'a7e4ab21-9eae-4beb-944f-3932655fe216',
-  uiClienId: '6727c398-549a-467b-a569-6ecc56f52626',
-  redirectUrl: 'http://localhost:4200'
+  apiUrl : `https://localhost:5000/api`
 };
 
 /*

@@ -15,13 +15,13 @@
 
     <div class="welcome__input">
       <input type="email" name="userEmail" #userEmail="ngModel"
-             [(ngModel)]="formData.email" required placeholder="Email"
+             [(ngModel)]="formData.email" required placeholder="E-mail (логин)*"
              [class.border-danger]="userEmail.invalid && userEmail.touched" email>
     </div>
 
     <div class="welcome__input password">
       <input   name="userPassword" #userPassword="ngModel"
-              [(ngModel)]="formData.password" required minlength="8" placeholder="Пароль"
+              [(ngModel)]="formData.password" required minlength="8" placeholder="Пароль*"
               [class.border-danger]="userPassword.invalid && userPassword.touched">
 
     </div>
@@ -34,6 +34,21 @@
       <a href="" class="btn btn-link">
         Забыли пароль?
       </a>
+    </div>
+
+    <div class="welcome__btn welcome__select">
+      <div class="select">
+        <select name="select">
+          <option value="1">
+            Русский
+          </option>
+
+          <option value="1">
+            English
+          </option>
+        </select>
+
+      </div>
     </div>
 
   </form>

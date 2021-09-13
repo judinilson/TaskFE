@@ -1,6 +1,7 @@
 import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatIconModule} from '@angular/material/icon';
 import {AppRoutingModule} from './app-routing.module';
+import {MatSelectModule} from '@angular/material/select';
 import {AppComponent} from './app.component';
 import {AuthWelcomeComponent} from './ui/auth/auth-welcome/auth-welcome.component';
 import {AuthLoginComponent} from './ui/auth/auth-login/auth-login.component';
@@ -70,7 +71,8 @@ import {VgBufferingModule} from '@videogular/ngx-videogular/buffering';;
     NoopAnimationsModule,
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true },

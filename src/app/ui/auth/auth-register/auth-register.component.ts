@@ -11,21 +11,33 @@ import {UserService} from "../../../core/services/user.service";
 export class AuthRegisterComponent implements OnInit {
 
   consts = ConstantHelper
-  hide = true;
 
   formData = new UserRegister()
+  password: string | undefined;
+  show = false;
 
   constructor(
     private userService:UserService
   ) { }
 
   ngOnInit(): void {
+    this.password = 'password'
   }
 
   onSubmit(){
     this.userService.create(this.formData).subscribe((value:any) => {
       console.log(value.model)
     })
+  }
+
+  showPassword() {
+    if (this.password === 'password') {
+      this.password = 'text';
+      this.show = true;
+    } else {
+      this.password = 'password';
+      this.show = false;
+    }
   }
 
 }
