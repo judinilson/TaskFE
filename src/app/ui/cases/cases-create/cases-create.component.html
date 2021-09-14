@@ -1,19 +1,326 @@
-<main class="page">
-  <section class="create">
+<div class="page">
+  <div class="create">
     <div class="create__content _container">
-      <div class="create__wrap">
-        <h2 class="create__title title">
-          создание кейса
-        </h2>
+      <div [formGroup]="CreateCaseForm" class="create__wrap">
+        <h2 class="create__title title">создание кейса</h2>
+        <!-- the nich -->
+        <div>
+          <label for="" class="create_case_label">Какая была ниша?</label>
+          <input
+            type="text"
+            class="create__input"
+            placeholder="Какая была ниша?"
+            formControlName=" nichaCategoryId"
+            required
+          />
+        </div>
+        <!-- case name -->
+        <div>
+          <label for="" class="create_case_label">Название кейса</label>
+          <input
+            type="text"
+            class="create__input"
+            placeholder="Рекламная кампания для салона красоты"
+            formControlName=" name"
+            required
+          />
+        </div>
+        <!-- company objective -->
+        <div>
+          <label for="" class="create_case_label">Цель кампании</label>
+          <input
+            type="text"
+            class="create__input"
+            placeholder="Получение лидов, заказов."
+            formControlName=" aim"
+            required
+          />
+        </div>
+        <!-- the budget -->
+        <div>
+          <label for="" class="create_case_label">Какой был бюджет?</label>
+          <input
+            type="text"
+            class="create__input"
+            placeholder="2000 руб на тестовую и 30.000 руб на основную РК (просто текстовое описание)"
+          />
+        </div>
+        <!-- cost per click -->
+        <div>
+          <label for="" class="create_case_label"
+            >Какая вышла цена за клик? (CPC)</label
+          >
+          <input
+            type="text"
+            class="create__input"
+            placeholder="25 руб"
+            formControlName=" cpc"
+            required
+          />
+        </div>
+        <!-- CTR -->
+        <div>
+          <label for="" class="create_case_label"
+            >Какой вышел показатель кликабельности? (CTR)</label
+          >
+          <input
+            type="text"
+            class="create__input"
+            placeholder="0,2%"
+            formControlName="ctr"
+            required
+          />
+        </div>
+        <!-- ROMI -->
+        <div>
+          <label for="" class="create_case_label"
+            >Какая рентабельность инвестиций в маркетинг? (ROMI)</label
+          >
+          <input
+            type="text"
+            class="create__input"
+            placeholder="120%"
+            formControlName="romi"
+            required
+          />
+        </div>
+        <!-- begining of work -->
+        <div formGroupName="indicatorstart">
+          <label for="" class="create_case_label"
+            >Какие показатели проекта до начала работы?</label
+          >
+          <input
+            type="text"
+            class="create__input"
+            placeholder="Заявки в день"
+            formControlName="dailyBid"
+            required
+          />
+          <input
+            type="text"
+            class="create__input"
+            placeholder="Подписчики"
+            formControlName="subscribers"
+            required
+          />
+          <input
+            type="text"
+            class="create__input"
+            placeholder="Выручка в день"
+            formControlName="dailyEarnings"
+            required
+          />
+        </div>
 
-        <input type="text" class="create__input" placeholder="Какая была ниша?">
-        <input type="text" class="create__input" placeholder="Какова цель компании?">
-        <input type="text" class="create__input" placeholder="Какие были шаги в настройке РК?">
-        <input type="text" class="create__input" placeholder="Какой был бюджет?">
-        <input type="text" class="create__input" placeholder="Сколько вышла цена за клик?">
-        <input type="text" class="create__input" placeholder="Каким был показатель CTR?">
-        <input type="text" class="create__input" placeholder="Доволен ли клиент результатом? ">
-        <input type="text" class="create__input" placeholder="Ссылка на аккаунт">
+        <!-- after work  -->
+        <div formGroupName="indicatorend">
+          <label for="" class="create_case_label"
+            >Какие показатели проекта после вашей работы?</label
+          >
+          <input
+            type="text"
+            class="create__input"
+            placeholder="Заявки в день"
+            formControlName="dailyBid"
+            required
+          />
+          <input
+            type="text"
+            class="create__input"
+            placeholder="Подписчики"
+            formControlName="subscribers"
+            required
+          />
+          <input
+            type="text"
+            class="create__input"
+            placeholder="Выручка в день"
+            formControlName="dailyEarnings"
+            required
+          />
+        </div>
+        <!-- steps PK -->
+        <div></div>
+          <div
+            formArrayName="steps"
+            *ngFor="
+              let item of CreateCaseForm.get('steps').controls;
+              let i = index
+            "
+          >
+            <label for="" class="create_case_label"
+              >Какие были шаги в настройке РК?</label
+            >
+            <div class="card_steps_add">
+              
+              <div class="step_title">
+                
+                <button class="remove_step_btn" (click)="deletesteps()">
+               <i class="fa fa-minus"></i>
+              </button>
+                <label>Шаг 1</label>
+                <input
+                  type="text"
+                  class=""
+                  placeholder="Анализ"
+                  formControlName="numer"
+                />
+              </div>
+              <input
+                type="text"
+                class="create__input"
+                placeholder="текст"
+                formControlName="title"
+              />
+              <textarea
+                type="text"
+                class="text_area create__input"
+                placeholder="Описание "
+                formControlName="description"
+              ></textarea>
+
+              <div
+                formArrayName="substeps"
+                *ngFor="
+                  let item of CreateCaseForm.get('steps').controls;
+                  let i = index
+                "
+              >
+                <input
+                  type="text"
+                  class="create__input"
+                  placeholder="текст"
+                  formControlName="title"
+                />
+                 <div>
+                <textarea
+                  type="text"
+                  class="text_area create__input"
+                  placeholder="Описание "
+                  formControlName="action"
+                ></textarea>
+  <button class="remove_step_btn" (click)="deletesubstepssteps()">
+               <i class="fa fa-minus"></i>
+              </button>
+              </div>
+               
+              </div>
+              <button class="add_step_btn" (click)="addsubsteps()">
+                <div class="btn_icon">
+                  <img [src]="consts.plus_icon" alt="" />
+                  <label>Добавить новый подшаг</label>
+                </div>
+              </button>
+            </div>
+          </div>
+          <!-- add new step btn -->
+          <div class="new_step_btn">
+            <button class="add_step_btn" (click)="(addsteps)">
+              <div class="btn_icon">
+                <img [src]="consts.plus_icon" alt="" />
+                <label>Добавить новый шаг</label>
+              </div>
+            </button>
+          </div>
+        </div>
+        <br />
+        <!-- file input   -->
+        <div>
+          <label for="" class="create_case_label"
+            >Детальная схема проекта</label
+          >
+          <input
+            type="text"
+            class="file_input"
+            placeholder="Добавить файл.pdf"
+          />
+        </div>
+        <br />
+        <!-- instagram account examples -->
+        <div formArrayName="instagramCompanies">
+          <div>
+            <label for="" class="create_case_label"
+              >Примеры инстаграм-аккаунтов</label
+            >
+            <div class="card_steps_add">
+              <input
+                type="text"
+                class="create__input"
+                placeholder="@ название аккаунта компании"
+                formControlName="name"
+              />
+              <input
+                type="text"
+                class="create__input"
+                placeholder="Ссылка на аккаунт компании"
+                formControlName="link"
+              />
+            </div>
+          </div>
+
+          <!-- add new account btn -->
+          <div class="new_step_btn">
+            <button class="add_step_btn">
+              <div class="btn_icon">
+                <img [src]="consts.plus_icon" alt="" />
+                <label>Добавить новый аккаунт</label>
+              </div>
+            </button>
+          </div>
+        </div>
+        <br />
+        <!-- creative file input   -->
+        <div formGroupName="creatives">
+          <label for="" class="create_case_label">Примеры креативов</label>
+          <input
+            type="text"
+            class="create__input file_input"
+            placeholder="Добавить файлы"
+            formControlName="picture"
+          />
+        </div>
+        <br />
+        <!-- comments -->
+        <input
+          type="text"
+          class="create__input"
+          placeholder="Комментарий к креативам"
+        />
+        <br />
+        <!-- social media input   -->
+        <div>
+          <label for="" class="create_case_label">Примеры креативов</label>
+          <div class="social_media_icon">
+            <img [src]="consts.telegram" alt="" />
+            <input type="text" class="create__input" placeholder="Telegram" />
+          </div>
+          <div class="social_media_icon">
+            <img [src]="consts.instagram" alt="" />
+            <input type="text" class="create__input" placeholder="Telegram" />
+          </div>
+          <div class="social_media_icon">
+            <img [src]="consts.vk" alt="" />
+            <input type="text" class="create__input" placeholder="Telegram" />
+          </div>
+          <div class="social_media_icon">
+            <img [src]="consts.tiktok" alt="" />
+            <input type="text" class="create__input" placeholder="Telegram" />
+          </div>
+          <div class="social_media_icon">
+            <img [src]="consts.youtube" alt="" />
+            <input type="text" class="create__input" placeholder="Telegram" />
+          </div>
+          <div class="social_media_icon">
+            <img [src]="consts.whatssap" alt="" />
+            <input type="text" class="create__input" placeholder="Telegram" />
+          </div>
+          <div class="social_media_icon">
+            <img [src]="consts.call" alt="" />
+            <input type="text" class="create__input" placeholder="Telegram" />
+          </div>
+        </div>
+        <br />
+        <!-- submit -->
         <div class="create__btn">
           <button type="submit" class="btn">
             Выбрать шаблон и опубликовать
@@ -21,9 +328,9 @@
         </div>
 
         <a href="index.html" class="create__close">
-          <img src="img/close-big.svg" alt="">
+          <img [src]="consts.close_big" alt="" />
         </a>
       </div>
     </div>
-  </section>
-</main>
+  </div>
+</div>
