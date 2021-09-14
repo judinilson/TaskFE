@@ -246,15 +246,16 @@
         </div>
         <br />
         <!-- instagram account examples -->
-        <div
-          formArrayName="instagramCompanies"
-          *ngFor="
-            let _ of CreateCaseForm['controls'].instagramCompanies['controls'];
-            let i = index
-          "
-        >
-          <ng-container [formGroupName]="i">
-            <div>
+        <div formArrayName="instagramCompanies">
+          <ng-container
+            *ngFor="
+              let _ of CreateCaseForm['controls'].instagramCompanies[
+                'controls'
+              ];
+              let i = index
+            "
+          >
+            <div style="margin-top: 25px" [formGroupName]="i">
               <label for="" class="create_case_label"
                 >Примеры инстаграм-аккаунтов</label
               >
