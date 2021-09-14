@@ -32,7 +32,6 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/@videogular/ngx-videogular/fonts/videogular.css",
-              "../node_modules/font-awesome/css/font-awesome.css",
               "src/styles.scss"
             ],
             "scripts": []

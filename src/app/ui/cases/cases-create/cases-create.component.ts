@@ -53,7 +53,7 @@ export class CasesCreateComponent implements OnInit {
   steps() {
     return new FormGroup({
       title: new FormControl('', Validators.required),
-      number: new FormControl('', Validators.required),
+      num: new FormControl('', Validators.required),
       description: new FormControl(null, Validators.required),
       substeps: new FormArray([this.substeps()]),
     });
@@ -78,34 +78,39 @@ export class CasesCreateComponent implements OnInit {
     });
   }
 
+  addinstagram() {
+    const control = this.CreateCaseForm.get('instagramCompanies') as FormArray;
+    control.push(this.steps());
+  }
+
   addsteps() {
     const control = this.CreateCaseForm.get('steps') as FormArray;
     control.push(this.steps());
   }
-  addsubsteps() {
-    const control = this.CreateCaseForm.get('substeps') as FormArray;
+  addsubsteps(step: any) {
+    const control = step.get('substeps') as FormArray;
     control.push(this.substeps());
   }
-  deletestep() {
+  deletesteps() {
     const control = this.CreateCaseForm.get('steps') as FormArray;
 
     if (control.length > 0) {
       control.removeAt(control.length - 1);
     }
   }
-  deleteatstep(index: any) {
+  removestepat(index: any) {
     const control = this.CreateCaseForm.get('steps') as FormArray;
 
     control.removeAt(index);
   }
-  deletesubstep() {
-    const control = this.CreateCaseForm.get('substeps') as FormArray;
+  deletesubsteps(step: any) {
+    const control = step.get('substeps') as FormArray;
 
     if (control.length > 0) {
       control.removeAt(control.length - 1);
     }
   }
-  deleteatsubstep(index: any) {
+  removesubstepat(index: any) {
     const control = this.CreateCaseForm.get('substeps') as FormArray;
 
     control.removeAt(index);
