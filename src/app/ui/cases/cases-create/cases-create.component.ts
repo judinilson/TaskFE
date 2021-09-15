@@ -16,17 +16,26 @@ import {
 export class CasesCreateComponent implements OnInit {
   consts = ConstantHelper;
   CreateCaseForm: any;
+  nich: Array<Nich> = [
+    { id: 1, name: 'Vilnius' },
+    { id: 2, name: 'Kaunas' },
+    { id: 3, name: 'Pavilnys' },
+    { id: 4, name: 'Pabradė' },
+    { id: 5, name: 'Klaipėda' },
+  ];
+  pdfFileToUpload: File | null = null;
+
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.CreateCaseForm = new FormGroup({
-      name: new FormControl(''),
-      aim: new FormControl(''),
-      cpc: new FormControl(''),
-      ctr: new FormControl(''),
-      romi: new FormControl(''),
-      nichaCategoryId: new FormControl(''),
-      userId: new FormControl(''),
+      name: new FormControl('', [Validators.required]),
+      aim: new FormControl('', [Validators.required]),
+      cpc: new FormControl('', [Validators.required]),
+      ctr: new FormControl('', [Validators.required]),
+      romi: new FormControl('', [Validators.required]),
+      nichaCategoryId: new FormControl([Validators.required]),
+      userId: new FormControl([Validators.required]),
       indicatorEnd: this.indicatorEnd(),
       steps: new FormArray([this.steps()]),
       indicatorStart: this.indicatorEnd(),
@@ -115,4 +124,39 @@ export class CasesCreateComponent implements OnInit {
 
     control.removeAt(index);
   }
+
+  //this for the creative images examples
+  exampleImge = [
+    this.consts.clothes1,
+    this.consts.clothes2,
+    this.consts.clothes3,
+  ];
+  removeExampleImg(index: any) {
+    const indexof = this.exampleImge.indexOf(index);
+    if (index > -1) {
+      this.exampleImge.splice(index, 1);
+    }
+  }
+
+  // PDF
+  handleFileInput(files: FileList) {
+    if (!files) return;
+    this.pdfFileToUpload = files.item(0);
+  }
+
+  uploadFileToActivity() {
+    // this.fileUploadService.postFile(this.fileToUpload).subscribe(
+    //   (data) => {
+    //     // do something, if upload success
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    // );
+  }
+}
+
+export interface Nich {
+  id: Number;
+  name: String;
 }
