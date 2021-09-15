@@ -6,13 +6,26 @@
         <!-- the nich -->
         <div>
           <label for="" class="create_case_label">Какая была ниша?</label>
-          <input
+
+          <ng-select
+            [items]="nich"
+            class="create__input"
+            placeholder="Какая была ниша?"
+            bindLabel="name"
+            dropdownPosition="auto"
+            [virtualScroll]="true"
+            [clearable]="false"
+            bindValue="id"
+            formControlName="nichaCategoryId"
+          >
+          </ng-select>
+          <!-- <input
             type="text"
             class="create__input"
             placeholder="Какая была ниша?"
             formControlName="nichaCategoryId"
             required
-          />
+          /> -->
         </div>
         <!-- case name -->
         <div>
@@ -242,6 +255,7 @@
             type="text"
             class="file_input"
             placeholder="Добавить файл.pdf"
+            accept="application/pdf, application/vnd.ms-excel"
           />
         </div>
         <br />
@@ -303,6 +317,20 @@
               formControlName="picture"
             />
           </ng-container>
+        </div>
+        <!--pictures examples  -->
+        <div class="creative_pictures">
+          <div
+            *ngFor="let item of exampleImge; let i = index"
+            class="creative_for"
+          >
+            <div class="creative_pictures_examples">
+              <img [src]="item" alt="" />
+              <div class="creative_icon" (click)="removeExampleImg(i)">
+                <i class="fa fa-times"></i>
+              </div>
+            </div>
+          </div>
         </div>
         <br />
         <!-- comments -->

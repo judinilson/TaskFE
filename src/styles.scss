@@ -1,6 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '~@angular/material' as mat;
+@use '~@angular/material'as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -19,13 +19,10 @@ $EZTarget-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$EZTarget-theme: mat.define-light-theme((
-  color: (
-    primary: $EZTarget-primary,
-    accent: $EZTarget-accent,
-    warn: $EZTarget-warn,
-  )
-));
+$EZTarget-theme: mat.define-light-theme((color: (primary: $EZTarget-primary,
+      accent: $EZTarget-accent,
+      warn: $EZTarget-warn,
+    )));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -36,6 +33,9 @@ $EZTarget-theme: mat.define-light-theme((
   /*change color of underline*/
   background-color: green !important;
 }
+
+// ng select 
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
 
 @font-face {
@@ -382,7 +382,7 @@ input:active {
   opacity: 0.8;
 }
 
-.password__show{
+.password__show {
   filter: contrast(175%) brightness(3%);
 }
 
@@ -620,7 +620,7 @@ input:active {
 
 .welcome__select {
   text-align: center;
-max-width: 26.4rem;
+  max-width: 26.4rem;
 
   select {
     cursor: pointer;
@@ -634,14 +634,15 @@ max-width: 26.4rem;
     border: 2px solid rgba(25, 80, 219, 0.46);
     border-radius: 9.6rem;
 
-     option {
-       border: none;
-       cursor: pointer;
+    option {
+      border: none;
+      cursor: pointer;
       margin: 10px;
       background: var(--main-gray);
     }
   }
-  .select{
+
+  .select {
     width: 26.4rem;
     position: relative;
   }
@@ -706,7 +707,7 @@ max-width: 26.4rem;
   cursor: pointer;
 }
 
-.wrap-primary__item:last-child{
+.wrap-primary__item:last-child {
   margin-right: 0;
 }
 
@@ -1798,12 +1799,12 @@ section.nisha .nisha__title {
   margin: 0rem 0rem 1.6rem 0rem;
 }
 
-.program-niche__title + .program-niche__title {
+.program-niche__title+.program-niche__title {
   position: relative;
   padding: 2rem 0rem 0rem 0rem;
 }
 
-.program-niche__title + .program-niche__title::after {
+.program-niche__title+.program-niche__title::after {
   content: "";
   position: absolute;
   left: 0;
@@ -1818,12 +1819,12 @@ section.nisha .nisha__title {
   line-height: 2.3rem;
 }
 
-.program-niche__text + .program-niche__title {
+.program-niche__text+.program-niche__title {
   position: relative;
   padding: 2rem 0rem 0rem 0rem;
 }
 
-.program-niche__text + .program-niche__title::after {
+.program-niche__text+.program-niche__title::after {
   content: "";
   position: absolute;
   left: 0;
@@ -2254,7 +2255,7 @@ section.nisha .nisha__title {
     margin-bottom: 5rem;
   }
 
-  .btn-mini{
+  .btn-mini {
     font-size: 1.3rem;
   }
 
@@ -2735,11 +2736,11 @@ section.nisha .nisha__title {
     font-size: 1.6rem;
   }
 
-  .program-niche__title + .program-niche__title::after {
+  .program-niche__title+.program-niche__title::after {
     height: 0.1rem;
   }
 
-  .program-niche__title + .program-niche__title {
+  .program-niche__title+.program-niche__title {
     padding: 1rem 0rem 0rem 0rem;
   }
 
@@ -2748,11 +2749,11 @@ section.nisha .nisha__title {
     padding-right: 4rem;
   }
 
-  .program-niche__text + .program-niche__title::after {
+  .program-niche__text+.program-niche__title::after {
     height: 0.1rem;
   }
 
-  .program-niche__text + .program-niche__title {
+  .program-niche__text+.program-niche__title {
     padding: 1.4rem 0rem 0rem 0rem;
   }
 
