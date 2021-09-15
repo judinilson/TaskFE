@@ -1,0 +1,135 @@
+.create_case_label {
+  font-family: 'Gill Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 120%;
+  padding: 10px;
+
+
+  color: #808080;
+}
+
+
+.card_steps_add {
+  background: #F8F8F8;
+  border: 2px solid #BBBBBB;
+  box-sizing: border-box;
+  border-radius: 13px;
+  padding: 10px
+}
+
+.text_area {
+  min-height: 100px;
+  border-radius: 20px;
+  resize: none;
+  width: 100%;
+  padding: 2.5rem 0rem 2.4rem 3rem;
+  font-size: 2.3rem;
+  font-weight: 300;
+  display: block;
+  font-family: 'Gill Sans';
+
+  line-height: 120%;
+  color: #808080;
+}
+
+.step_title {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+
+  input {
+    background-color: unset;
+    border-radius: unset;
+    padding: unset;
+    border: none;
+    border-bottom: 2px solid #BBBBBB;
+    font-weight: unset;
+    width: 150px;
+    margin-left: 10px;
+  }
+}
+
+.add_step_btn {
+  background: #868686;
+  border-radius: 50px;
+  width: 170px;
+  height: 40px;
+  cursor: pointer;
+
+  label {
+    font-family: 'Gill Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 40px;
+    /* identical to box height, or 250% */
+
+
+    color: #FFFFFF;
+  }
+}
+
+.new_step_btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+
+}
+
+.btn_icon {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+
+  img {
+    margin: 10px;
+    width: 12px;
+  }
+}
+
+
+.file_input {
+  border-style: dashed;
+  border-color: #212121;
+
+
+}
+
+.social_media_icon {
+  input {
+    padding-left: 60px;
+  }
+
+  img {
+    position: absolute;
+    margin: 16px;
+  }
+}
+
+.remove_step_btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.substeps_with_icon {
+  display: flex;
+  justify-content: flex-end;
+
+  .substep_input {
+    width: 100%;
+  }
+}
+
+.btn_substep_remove {
+  background: #EDEDED;
+  border-radius: 5px;
+  padding: 6px;
+  margin: 5px;
+  height: 170px;
+}
