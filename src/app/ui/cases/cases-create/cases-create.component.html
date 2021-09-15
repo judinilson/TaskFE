@@ -252,10 +252,11 @@
             >Детальная схема проекта</label
           >
           <input
-            type="text"
+            type="file"
             class="file_input"
             placeholder="Добавить файл.pdf"
             accept="application/pdf, application/vnd.ms-excel"
+            (change)="handleFileInput($event.target.files)"
           />
         </div>
         <br />

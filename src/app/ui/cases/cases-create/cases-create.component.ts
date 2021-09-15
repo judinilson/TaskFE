@@ -23,6 +23,7 @@ export class CasesCreateComponent implements OnInit {
     { id: 4, name: 'Pabradė' },
     { id: 5, name: 'Klaipėda' },
   ];
+  pdfFileToUpload: File | null = null;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -135,6 +136,23 @@ export class CasesCreateComponent implements OnInit {
     if (index > -1) {
       this.exampleImge.splice(index, 1);
     }
+  }
+
+  // PDF
+  handleFileInput(files: FileList) {
+    if (!files) return;
+    this.pdfFileToUpload = files.item(0);
+  }
+
+  uploadFileToActivity() {
+    // this.fileUploadService.postFile(this.fileToUpload).subscribe(
+    //   (data) => {
+    //     // do something, if upload success
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    // );
   }
 }
 
